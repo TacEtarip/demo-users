@@ -1,0 +1,48 @@
+{
+  "name": "demo-users",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/infrastructure/http/server.ts",
+        "prebuild": "rimraf dist",
+        "build": "tsc --project tsconfig.build.json",
+        "build:swc": "swc src -d dist --strip-leading-paths",
+        "start": "node -r tsconfig-paths/register dist/infrastructure/http/server.js",
+        "format": "prettier --write \"src/**/*.{ts,js,json}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,js,json}\"",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.2",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.3",
+        "express": "^5.1.0",
+        "mongodb": "^7.0.0",
+        "mongoose": "^9.0.0",
+        "reflect-metadata": "^0.2.2",
+        "tslib": "^2.8.1",
+        "winston": "^3.18.3"
+    },
+    "devDependencies": {
+        "@swc/cli": "^0.7.9",
+        "@swc/core": "^1.15.3",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.5",
+        "@types/jest": "^30.0.0",
+        "jest": "^30.2.0",
+        "prettier": "^3.6.2",
+        "rimraf": "^6.1.2",
+        "ts-jest": "^29.4.5",
+        "ts-node-dev": "^2.0.0",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.9.3"
+    }
+}
